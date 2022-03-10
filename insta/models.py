@@ -10,6 +10,7 @@ class Image(models.Model):
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
     comments = models.IntegerField(default=0)
+    time_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.image_name
@@ -19,3 +20,7 @@ class Image(models.Model):
 class Profile(models.Model):
     prof_photo = models.ImageField(upload_to='ishots/')
     bio = models.TextField()
+    time_created = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.bio
