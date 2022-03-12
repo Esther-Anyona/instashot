@@ -1,2 +1,29 @@
 {% include 'navbar.html' %}
-<h1>Hey! Welcome</h1>
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            {% for image in images %}
+            <div class="card">
+                <h1>{{image.image_name}}</h1>
+                <div class="card-title"></div>
+                <img src="{{image.image.url}}">
+                <p>{{image.profile}}</p>
+                <p>{{image.image_caption}}</p>
+                <p>{{image.likes}}</p>
+                <p>{{image.comments}}</p>
+                <p>{{image.time_created|timesince}} ago</p>
+            </div>
+            {% endfor %}
+            {% for profile in profiles %}
+            {{profile.profile_photo.url}}
+            {{profile.bio}}
+
+            {% endfor %}
+
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}

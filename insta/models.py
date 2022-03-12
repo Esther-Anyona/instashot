@@ -8,14 +8,22 @@ class Image(models.Model):
     image_name = models.CharField(max_length=50)
     image_caption = models.TextField()
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
-    likes = models.IntegerField(default=0)
-    comments = models.IntegerField(default=0)
     time_created = models.DateTimeField(auto_now_add=True, null=True)
+
+    def save_image(self):
+        """
+        Method to save images
+        """
+        self.save()
+
+    def delete_image(self):
+        """
+        Method to delete image
+        """
+        self.delete()
 
     def __str__(self):
         return self.image_name
-
-
 
 class Profile(models.Model):
     prof_photo = models.ImageField(upload_to='ishots/')
