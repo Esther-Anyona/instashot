@@ -1,7 +1,16 @@
 # Project Title
-### instashot
+## Instashot
+
+## Author
+[Esther-Anyona](https://github.com/Esther-Anyona)
+<hr>
+
 ## Description
 This is a django web application of a clone of the website for the popular photo app Instagram
+
+## App Screenshots
+[screenshot1](insta/static/assets/instashot1.png)
+[screenshot2](insta/static/assets/instashot2.png)
 
 ## Getting Started
 
@@ -19,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 python3 manage.py makemigrations
     - Apply migrattions to database
     - python3 manage.py migrate
-1. To run the app
+1. To run the app on localhost
     - python3 manage.py runserver
 
 ### Prerequisites
@@ -31,7 +40,7 @@ The application requires the following installations to operate:
 * django
 * psycopg2
 
-### Requirements
+## Requirements
 The user can perform the following functions:
 
 - Sign in to the application to start using it.
@@ -41,51 +50,43 @@ The user can perform the following functions:
 - Like a picture and leave a comment on it.
 - A user can search for other users names on the application.
 
-### Installing
+## Creating .env
+Required file to keep sensitive data that should not be exposed in github
 
-A step by step series of examples that tell you how to get a development env running
+SECRET_KEY = '<Secret_key>'
+DBNAME = 'insta'
+USER = '<Username>'
+PASSWORD = '<password>'
+DEBUG = True
 
-Say what the step will be
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '<your-email>'
+EMAIL_HOST_PASSWORD = '<your-password>'
 
-```
-Give the example
-```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To run tests for this application in development:
 1. run python3 manage.py test
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Install heroku CLI to deploy on heroku
+* Add a Procfile in the project root;
+* Add requirements.txt file with all the requirements in the project root;
+* Add Gunicorn to requirements.txt;
+* A runtime.txt to specify the correct Python version in the project root;
+* Configure whitenoise to serve static files.
 
 ## Built With
-* Python 4.0.3
+* Python3.8
+* Django==4.0.2
+* Bootstrap v5
+* postgresql
+* Heroku
 
 ## Authors
 This was a solo project.
@@ -93,12 +94,11 @@ This was a solo project.
 ## Bugs
 There are no known bugs at the moment but should you spot one, feel free to create a pull request.
 
+## Contacts
+You can reach me through:
+* Email: jkemuntoe@gmail.com or
+* Phone: +254724374477
+
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+*MIT License*:
+Copyright (c) 2022 *Esther Anyona*
