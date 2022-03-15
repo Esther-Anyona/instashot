@@ -51,6 +51,7 @@ The user can perform the following functions:
 - A user can search for other users names on the application.
 
 ## Creating .env
+
 Required file to keep sensitive data that should not be exposed in github
 
 SECRET_KEY = '<Secret_key>'
