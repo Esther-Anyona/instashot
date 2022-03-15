@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to Instashot. Create your profile. You will also find otrher users to follow and comment on their photos.
