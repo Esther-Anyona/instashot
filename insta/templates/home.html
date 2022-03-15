@@ -21,9 +21,9 @@
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href=" {% url 'like' image_id=image.id %}">
-                                <p>{{likes|length}} likes<i class="fa fa-heart-o fa-3x" style="color: black" aria-hidden="true"></i></p>
+                                <p>{{likes|length}} likes<i class="fa fa-heart-o fa-3x" style="color: orange" aria-hidden="true"></i></p>
                             </a>
-                            <a href=" {% url 'comment' image_id=image.id %}"><p class=""> {{image.comment.count}} comments <i class="fa fa-comment-o fa-3x" aria-hidden="true" style="color:black;"></i></p>        
+                            <a href=" {% url 'comment' image_id=image.id %}"><p class=""> {{image.comment.count}} comments <i class="fa fa-comment-o fa-3x" aria-hidden="true" style="color:orange;"></i></p>        
                             </a>
                         </li>
                     </ul>
@@ -43,7 +43,7 @@
             </div>
             {% empty %}
             <h2>No images. Follow people to see their images</h2>
-            <p><a href= "{% url 'upload_image' %}">Add Image</a></p>
+            <p><a href= "{% url 'upload_image' %}">Add photo</a></p>
             {% endfor %}
         </div>
         <div class="col-md-3"></div>
