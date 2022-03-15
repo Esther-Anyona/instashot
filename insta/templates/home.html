@@ -9,7 +9,7 @@
         <div class="col-md-6">
             {% for image in images %}
             <div class="card">
-                <a href="{% url 'showprofile' id=image.profile.id %}">
+                <a href="{% url 'showprofile' id=image.profile.id %}" style="color: orange;font-size: 25px;font-weight: 800;font-style: oblique;text-align: center;">
                     <img src="{{image.profile.prof_photo.url}}" class="rounded-circle" style="width:10%; height:auto" alt=""/>{{image.profile.username}}
                 </a>
                 <hr>
@@ -17,7 +17,7 @@
                     <img src="{{image.image.url}}" class="card-img-top" alt="Image">
                 </div>
                 <div class="container">
-                    <h5><strong>{{image.profile.username}}</strong> {{image.image_caption}}</h5>
+                    <h3><strong>{{image.profile.username}}</strong> {{image.image_caption}}</h3>
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href=" {% url 'like' image_id=image.id %}">
