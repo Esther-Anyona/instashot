@@ -5,7 +5,8 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
             {% for image in images %}
             <div class="card">
                 <a href="{% url 'showprofile' id=image.profile.id %}">
@@ -16,21 +17,19 @@
                     <img src="{{image.image.url}}" class="card-img-top" alt="Image">
                 </div>
                 <div class="container">
+                    <h5><strong>{{image.profile.username}}</strong> {{image.image_caption}}</h5>
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href=" {% url 'like' image_id=image.id %}">
-                                <i class="fa fa-heart-o fa-3x" style="color: black" aria-hidden="true"></i>
+                                <p>{{likes|length}} likes<i class="fa fa-heart-o fa-3x" style="color: black" aria-hidden="true"></i></p>
                             </a>
-                            <a href=" {% url 'comment' image_id=image.id %}">
-                                <i class="fa fa-comment-o fa-3x" aria-hidden="true" style="color:black;"></i>
+                            <a href=" {% url 'comment' image_id=image.id %}"><p class=""> {{image.comment.count}} comments <i class="fa fa-comment-o fa-3x" aria-hidden="true" style="color:black;"></i></p>        
                             </a>
-                            <hr>
                         </li>
                     </ul>
-                    <h5><strong>{{image.profile.username}}</strong> {{image.image_caption}}</h5>
                     <br>
-                    <p></p>{{likes|length}} likes
-                    <p class=""> {{image.comment.count}} comments </p>
+                    
+                    
 
                     <div class="card-body ">
                         {% for comment in comments %}
@@ -47,6 +46,7 @@
             <p><a href= "{% url 'upload_image' %}">Add Image</a></p>
             {% endfor %}
         </div>
+        <div class="col-md-3"></div>
     </div>
 </div>
 {% endblock %}

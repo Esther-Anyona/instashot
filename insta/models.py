@@ -34,6 +34,9 @@ class Image(models.Model):
     def __str__(self):
         return f'{self.user.username}'
 
+    class Meta:
+        ordering =['-time_created']
+
 class Comment(models.Model):
     image = models.ForeignKey(Image,blank=True, on_delete=models.CASCADE,related_name='comment')
     author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)

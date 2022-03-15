@@ -1,4 +1,11 @@
 .card{
     background-color: rgb(153, 97, 89);
+    border-radius: 50px;
 
+}
+a{
+    text-decoration: none !important;
+}
+a:hover{
+    cursor: pointer;
 }
