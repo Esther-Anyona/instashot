@@ -3,22 +3,17 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <!-- Empty div -->
-    <div class="col-md-4">
-      <img src="/insta/static/assets/Instagram_logo-620x480.jpg" alt="instashot-logo" style="width: fit-content;height: 400px;">
+    <div class="col-md-3">
+      <img class="img-fluid" src="../../static/assets/Instagram_logo-620x480.jpg" width="700" height="600" alt="instalogo">
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       {% if form.errors %}
         <p> Some Information Might be Incorrect </p>
       {% endif %}
-      <div class="panel panel-default">
 
-        <div class="panel-heading">
           <h3 class="text-center">Sign Up</h3>
-        </div>
-        <div class="panel-body">
 
           <form  action="/accounts/register/" method="post">
             {% csrf_token %}
@@ -29,13 +24,8 @@
             <input type="hidden" name="next" value="/accounts/login/">
           </form>
           <p class="mt-5">Already Have an Account, <a href="/accounts/login/" class="text-primary">Login</a></p>
-        </div>
-
-      </div>
-
     </div>
-    <!-- empty div -->
-    <div class="col-md-4"></div>
+    <div class="col-md-3"></div>
   </div>
 </div>
 
